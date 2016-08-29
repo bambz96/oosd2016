@@ -1,6 +1,6 @@
 /* SWEN20003 Object Oriented Software Development
  * RPG Game Engine
- * Author: <Your name> <Your login>
+ * Author: Ambar Srivastava <srivastavaa>
  */
 
 import org.newdawn.slick.SlickException;
@@ -27,10 +27,12 @@ public class Camera
     
     public int getxPos() {
         // TO DO: Fill In
+    	return this.xPos;
     }
 
     public int getyPos() {
         // TO DO: Fill In
+    	return this.yPos;
     }
 
     
@@ -38,6 +40,9 @@ public class Camera
     public Camera(Player player, int screenwidth, int screenheight)
     {   
         // TO DO: Fill In
+    	this.unitFollow = player; 
+    	this.screenwidth = screenwidth;
+    	this.screenheight = screenheight;
     }
 
     /** Update the game camera to recentre it's viewpoint around the player 
@@ -52,6 +57,7 @@ public class Camera
      */
     public int getMinX(){
         // TO DO: Fill In
+    	
     }
     
     /** Returns the maximum x value on screen 

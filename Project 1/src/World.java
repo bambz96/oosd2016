@@ -1,21 +1,24 @@
 /* 433-294 Object Oriented Software Development
  * RPG Game Engine
- * Author: <Your name> <Your login>
+ * Author: <Ambar Srivastava> <srivastavaa>
  */
 
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.tiled.TiledMap;
 
 /** Represents the entire game world.
  * (Designed to be instantiated just once for the whole game).
  */
 public class World
 {
+	private TiledMap map;
     /** Create a new World object. */
     public World()
     throws SlickException
     {
         // TODO: Fill in
+    	map = new TiledMap("assets/map.tmx","assets/");
     }
 
     /** Update the game state for a frame.
@@ -36,5 +39,7 @@ public class World
     throws SlickException
     {
         // TODO: Fill in
+      	map.render(756, 684, 1000, 1000, 13, 10);
+ 
     }
 }
