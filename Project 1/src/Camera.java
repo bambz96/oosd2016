@@ -36,7 +36,7 @@ public class Camera
     }
 
     
-    /** Create a new World object. */
+    /** Create a new Camera object. */
     public Camera(Player player, int screenwidth, int screenheight)
     {   
         // TO DO: Fill In
@@ -51,6 +51,7 @@ public class Camera
     throws SlickException
     {
         // TO DO: Fill In
+    	
     }
     
     /** Returns the minimum x value on screen 
@@ -84,6 +85,7 @@ public class Camera
     throws SlickException
     {
         // TO DO: Fill In
+  
     }
     
 }

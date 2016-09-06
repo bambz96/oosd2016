@@ -4,6 +4,7 @@
  */
 
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
 
@@ -13,12 +14,19 @@ import org.newdawn.slick.tiled.TiledMap;
 public class World
 {
 	private TiledMap map;
+	private Image character;
+	private Player player;
+	private int xPos, yPos;
+	private double deltaX, deltaY;
+	private Camera playerCamera;
+	
     /** Create a new World object. */
     public World()
     throws SlickException
     {
         // TODO: Fill in
-    	map = new TiledMap("assets/map.tmx","assets/");
+    	player = new Player();
+    	//playerCamera = new Camera(player, screenwidth, screenheight);
     }
 
     /** Update the game state for a frame.
@@ -30,6 +38,11 @@ public class World
     throws SlickException
     {
         // TODO: Fill in
+    	double deltaX = dir_x*0.25*delta;
+    	double deltaY = dir_y*0.25*delta;
+    	player.update(deltaX, deltaY);
+
+    	
     }
 
     /** Render the entire screen, so it reflects the current game state.
@@ -39,7 +52,10 @@ public class World
     throws SlickException
     {
         // TODO: Fill in
-      	map.render(756, 684, 1000, 1000, 13, 10);
- 
+    	map = new TiledMap("assets/map.tmx","assets/");
+      	map.render(-72,-72,4,4,13,10);
+      	
+      	character = new Image("assets/units/player.png");
+      	character.draw(360,252);
     }
 }
